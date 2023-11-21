@@ -10,6 +10,7 @@ class AudioViewSet(viewsets.ModelViewSet):
     queryset = Audio.objects.all().order_by('-created_at')
     serializer_class = AudioSerializer
     permission_classes = [permissions.AllowAny]
+    lookup_field = 'slug'
 
     def get_queryset(self):
         queryset = Audio.objects.all()
