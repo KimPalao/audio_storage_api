@@ -4,7 +4,7 @@ from rest_framework import serializers
 class AudioFileSerializer(serializers.ModelSerializer):
     class Meta:
         model = AudioFile
-        fields = ['id', 'file']
+        fields = ['id', 'file', 'notes']
 
 class AudioSerializer(serializers.ModelSerializer):
     files = AudioFileSerializer(read_only=True, many=True)
