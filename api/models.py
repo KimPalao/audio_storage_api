@@ -18,7 +18,7 @@ class AudioFile(models.Model):
 
     file = models.FileField(upload_to="uploads/")
     audio = models.ForeignKey(Audio, on_delete=models.CASCADE, related_name="files")
-    notes = models.TextField()
+    notes = models.TextField(blank=True)
 
     def __str__(self):
         return self.file.path
