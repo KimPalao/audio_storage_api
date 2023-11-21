@@ -11,6 +11,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+import dotenv
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'audio_storage_api.settings')
+
+dotenv.read_dotenv()
 
 application = get_wsgi_application()
