@@ -15,6 +15,6 @@ import dotenv
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'audio_storage_api.settings')
 
-dotenv.read_dotenv()
+dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 application = get_wsgi_application()
