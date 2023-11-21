@@ -1,0 +1,13 @@
+{% extends 'admin/change_form.html' %}
+{% block after_field_sets %} 
+<hr>
+<fieldset class="module aligned">
+  <div class="form-row field-name">
+    <div>
+      <div class="flex-container">
+        <label>Link:</label>
+        <a id="frontend_link" href="{{ frontend_url}}/audio/{{original.slug}}" target="_blank" class="vTextField">{{ original.name }}</a>
+    </div>
+</div>
+</fieldset>
+{% endblock %}
