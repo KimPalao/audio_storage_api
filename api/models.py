@@ -10,3 +10,5 @@ class Audio(models.Model):
     explicit = models.BooleanField()
     file = models.FileField(upload_to="uploads/")
 
+    def __str__(self) -> str:
+        return self.name
