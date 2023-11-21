@@ -5,6 +5,7 @@ class Audio(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
     description = models.TextField()
     explicit = models.BooleanField()
     file = models.FileField(upload_to="uploads/")
