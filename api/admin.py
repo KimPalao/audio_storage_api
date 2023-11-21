@@ -1,11 +1,16 @@
 from django.contrib import admin
 from os import environ
-from .models import Audio
+from .models import Audio, AudioFile
+
+class AudioFileInline(admin.TabularInline):
+    model = AudioFile
 
 class AudioAdmin(admin.ModelAdmin):
     list_display = 'name', 'explicit'
 
     prepopulated_fields = {"slug": ["name"]}
+
+    inlines = AudioFileInline,
 
     def render_change_form(self, request, context, *args, **kwargs):
         self.change_form_template = 'admin/api/audio_change_form_with_frontend_link.html'
