@@ -14,7 +14,7 @@ class AudioViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Audio.objects.all()
         explicit = self.request.query_params.get('explicit')
-        if explicit is None or explicit == 'false':
+        if not self.kwargs.get('pk', None) and (explicit is None or explicit == 'false'):
             queryset = queryset.filter(explicit=False)
         queryset = queryset.order_by('-created_at')
         return queryset
